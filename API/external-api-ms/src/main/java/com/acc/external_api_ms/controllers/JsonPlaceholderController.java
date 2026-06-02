@@ -41,6 +41,13 @@ public class JsonPlaceholderController {
                 "Successfully retrieved posts from JSONPlaceholder API");
     }
 
+    @GetMapping("/posts/paginated")
+    public Response getAllPostsPaginated(@RequestParam int page, @RequestParam int limit){
+        log.info("Request received for paginated: GET /api/json-placeholder/posts");
+        return new Response(HttpStatus.OK,"Success",jsonPlaceholderService.getAllPostsPaginated(page, limit),
+                "Successfully retrieved posts from JSONPlaceholder API");
+    }
+
     @GetMapping("/posts/{id}")
     public Response getPostFromId(@PathVariable Long id){
         log.info("Request received: GET /api/json-placeholder/posts/{} with id={}", id, id);

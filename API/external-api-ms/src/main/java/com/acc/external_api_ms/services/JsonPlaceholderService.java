@@ -46,6 +46,17 @@ public class JsonPlaceholderService {
         return List.of(posts);
     }
 
+    public List<PostsDto> getAllPostsPaginated(int page, int limit){
+        String finalUrl = baseUrl + "/posts?_start={page}&_limit={limit}";
+        PostsDto[] posts = restTemplate.getForObject(finalUrl,PostsDto[].class,page,limit);
+        if(posts == null){
+            log.warn("No posts found from JSONPlaceholder Paginated API");
+            return List.of();
+        }
+        log.info("Successfully retrieved {} posts from JSONPlaceholder Paginated API", posts.length);
+        return List.of(posts);
+    }
+
 
     public PostsDto getPostFromId(Long id){
         String finalUrl = baseUrl + "/posts/{id}";
