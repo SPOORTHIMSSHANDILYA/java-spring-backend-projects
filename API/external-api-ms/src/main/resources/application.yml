@@ -8,6 +8,9 @@ spring:
 api:
   jsonPlaceholder:
     baseUrl: https://jsonplaceholder.typicode.com
+  weatherApi:
+    baseUrl: https://api.openweathermap.org/data/2.5
+    apiKey: d2198320f9fc7cf8445c50146b1ffe53
 
 # RestTemplate timeout config
 rest-template:
