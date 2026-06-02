@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: libraryManagement
+  datasource:
+    url: jdbc:mysql://localhost:3306/library_management
+    username: sms99
+    password: sms99
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
