@@ -45,6 +45,6 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public ErrorResponse handleHttpClientErrorException(HttpClientErrorException exception) throws Exception {
-        return new ErrorResponse(HttpStatus.NOT_FOUND,"HttpClientErrorException", exception.getMessage());
+        return new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR,"HttpClientErrorException", exception.getMessage());
     }
 }
