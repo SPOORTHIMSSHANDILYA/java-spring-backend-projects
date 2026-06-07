@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: github-service
+
+api:
+  githubApi:
+    baseUrl: https://api.github.com
+
+# RestTemplate timeout config
+rest-template:
+connect-timeout-ms: 5000
+read-timeout-ms: 5000
+
+logging:
+  level:
+    com.external: INFO
+
+
+rest:
+  client:
+    connect-timeout: 5000
+    read-timeout: 5000
